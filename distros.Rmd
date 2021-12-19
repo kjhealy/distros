@@ -109,7 +109,7 @@ df %>%
   scale_color_manual(values = alpha(my_oka, 1)) + 
   guides(color = "none", 
          fill = "none") + 
-  labs(x = "Logged Population", y = "Count", 
+  labs(x = "Proportion", y = "Count", 
        title = "Subgroup distribution across units") + 
   facet_wrap(~ name, nrow = 1, labeller = as_labeller(grp_names)) 
 
@@ -153,10 +153,10 @@ df %>%
   geom_histogram(mapping = aes(x = log(value), y = ..count.., 
                           color = name, fill = name), 
             stat = "bin", bins = 20, size = 0.5,
-            alpha = 0.7) + 
+            alpha = 0.5, position = "identity") + 
   scale_color_manual(values = alpha(c( my_oka[1:3], "gray40"), 1),
                      labels = as_labeller(grp_names)) + 
-  scale_fill_manual(values = alpha(c( my_oka[1:3], "gray40"), 0.6),
+  scale_fill_manual(values = alpha(c( my_oka[1:3], "gray40"), 0.5),
                     labels = as_labeller(grp_names)) + 
   labs(x = "Logged Population", y = "Count", color = "Group", 
        fill = "Group",
@@ -305,7 +305,7 @@ df %>%
   scale_color_manual(values = alpha(my_oka, 1)) + 
   guides(color = "none", fill = "none") + 
   labs(x = "Logged Population", y = "Density", 
-       title = "Comparing Subgroups: Histograms (Density)", 
+       title = "Comparing Subgroups: Histograms", 
        subtitle = "Overall distribution shown in outline") + 
   facet_wrap(~ name, nrow = 1, labeller = as_labeller(grp_names)) 
 
