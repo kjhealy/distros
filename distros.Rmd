@@ -18,7 +18,7 @@ output:
 ---
 
 ```{r, echo = FALSE, message=FALSE}
-knitr::opts_chunk$set(message = FALSE, warning = FALSE)
+knitr::opts_chunk$set(message = FALSE, warning = FALSE, dpi = 300)
 
 library(here)
 library(tidyverse)
